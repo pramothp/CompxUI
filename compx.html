@@ -42,19 +42,24 @@
                         success: display                 
                     })
                 } else{
-                	display("Failure");
+                	display("Not a csv");
                 }
  
              });
              
              function display(result){
-                var file_data = $('input[type="file"]').prop('files')[0]; 
-                var labeltag ="<div class='file-detail'><div class='label'><div class='label-txt'>Filename</div><div class='label-txt status'>Status</div></div><div class='label-txt downloadimg download'>Download</div>"; 
-                var valuetag ="<div class='value'><div class='value-txt file'> filename </div><div class='value-txt status'> Status </div><div class='value-txt download' onClick='downloadfn(this)'><img class='download-img' src='./images/download.png'/></div></div></div>";
-                $(".selector-content").hide();
-                valuetag = valuetag.replace("filename",file_data.name);
-                valuetag = valuetag.replace("Status", result);
-                $(".selector").append(labeltag+valuetag);
+            	 var file_data = $('input[type="file"]').prop('files')[0]; 
+            	 if(result=="Not a csv"){
+            		 var labeltag ="<div class='file-detail'><div class='label'><div class='label-txt'>Filename</div><div class='label-txt status'>Status</div></div><div class='label-txt downloadimg download'>Download</div>"; 
+                     var valuetag ="<div class='value'><div class='value-txt file'> filename </div><div class='value-txt status'> Status </div><div class='value-txt download'></div></div></div>";
+            	 } else{
+                     var labeltag ="<div class='file-detail'><div class='label'><div class='label-txt'>Filename</div><div class='label-txt status'>Status</div></div><div class='label-txt downloadimg download'>Download</div>"; 
+                     var valuetag ="<div class='value'><div class='value-txt file'> filename </div><div class='value-txt status'> Status </div><div class='value-txt download' onClick='downloadfn(this)'><img class='download-img' src='./images/download.png'/></div></div></div>";
+            	 }
+            	 $(".selector-content").hide();
+                 valuetag = valuetag.replace("filename",file_data.name);
+                 valuetag = valuetag.replace("Status", result);
+                 $(".selector").append(labeltag+valuetag);
              }
 
              function downloadfn(pthis){
