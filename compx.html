@@ -49,7 +49,7 @@
              
              function display(result){
             	 var file_data = $('input[type="file"]').prop('files')[0]; 
-            	 if(result=="Not a csv"){
+            	 if(result=="Not a csv" || result=="Success"){
             		 var labeltag ="<div class='file-detail'><div class='label'><div class='label-txt'>Filename</div><div class='label-txt status'>Status</div></div><div class='label-txt downloadimg download'>Download</div>"; 
                      var valuetag ="<div class='value'><div class='value-txt file'> filename </div><div class='value-txt status'> Status </div><div class='value-txt download'></div></div></div>";
             	 } else{
