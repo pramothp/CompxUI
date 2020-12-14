@@ -56,6 +56,7 @@
                      var labeltag ="<div class='file-detail'><div class='label'><div class='label-txt'>Filename</div><div class='label-txt status'>Status</div></div><div class='label-txt downloadimg download'>Download</div>"; 
                      var valuetag ="<div class='value'><div class='value-txt file'> filename </div><div class='value-txt status'> Status </div><div class='value-txt download' onClick='downloadfn(this)'><img class='download-img' src='./images/download.png'/></div></div></div>";
             	 }
+            	 
             	 $(".selector-content").hide();
                  valuetag = valuetag.replace("filename",file_data.name);
                  valuetag = valuetag.replace("Status", result);
